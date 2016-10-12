@@ -25,6 +25,8 @@ public class LearningReflection {
 
     private static void getReflectionClass() throws ClassNotFoundException {
         Class c1 = Class.forName("MyClass");
+        Class c2 = MyClass.class;
+//        Class c3 =
         try {
             c1.newInstance();
             Arrays.stream(c1.getDeclaredFields()).forEach(field -> {
@@ -39,13 +41,13 @@ public class LearningReflection {
 }
 
 class MyClass {
-    int count;
+    public int count;
 
-    MyClass(int start) {
+    public MyClass(int start) {
         count = start;
     }
 
-    void increase(int step) {
+    public void increase(int step) {
         count = count + step;
     }
 
